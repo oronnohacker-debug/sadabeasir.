@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First Website</title>
+  <style>
+    body {
+      background-color: #eaf6ff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 30px;
+    }
+
+    h1 {
+      color: #0066cc;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      width: 250px;
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    #messageDisplay {
+      font-size: 18px;
+      margin-top: 15px;
+    }
+
+    h2 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+<img src="photo.jpg" width="200">
+
+  <h1>Hello! I am a student</h1>
+  <p>My name is Oronno</p>
+  <p>I study in class 8</p>
+  <p>I want to become a web developer</p>
+  <p>My dream is to earn online</p>
+
+  <hr><br>
+
+  <h2>Contact Me</h2>
+
+  <form id="contactForm">
+    <input type="text" id="nameInput" placeholder="Oronno">
+    <br><br>
+
+    <input type="email" id="emailInput" placeholder="oronnohacker@gmail.com">
+    <br><br>
+
+    <input type="text" id="subjectInput" placeholder="Subject">
+    <br><br>
+
+    <textarea id="messageInput" placeholder="Your Message" rows="4" cols="30"></textarea>
+    <br><br>
+
+    <button type="button" onclick="submitForm()">Send</button>
+  </form>
+
+  <div id="messageDisplay" style="color:green;"></div>
+
+  <script>
+    function submitForm() {
+      var name = document.getElementById("nameInput").value;
+      var email = document.getElementById("emailInput").value;
+      var subject = document.getElementById("subjectInput").value;
+      var message = document.getElementById("messageInput").value;
+
+      if (name === "" || email === "" || subject === "" || message === "") {
+        document.getElementById("messageDisplay").style.color = "red";
+        document.getElementById("messageDisplay").innerHTML = "Please fill all fields!";
+        return;
+      }
+
+      document.getElementById("messageDisplay").style.color = "green";
+      document.getElementById("messageDisplay").innerHTML =
+        "Thanks, " + name + "! Your message has been sent. <br>" +
+        "Email: " + email + "<br>Subject: " + subject + "<br>Message: " + message;
+
+      document.getElementById("contactForm").reset();
+    }
+  </script>
+</body>
+<audio controls>
+  <source src="my_song.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+</html>
